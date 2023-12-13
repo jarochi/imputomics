@@ -87,13 +87,13 @@ Language: en-US
 RdMacros: Rdpack
 LazyData: true
 Remotes:  
-    release/Biobase,
-    https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz,
-    release/impute,
-    https://cran.r-project.org/src/contrib/Archive/TimeProjection/TimeProjection_0.2.0.tar.gz,
-    jeffwong/imputation,
-    WangLab-MSSM/DreamAI/Code,
-    release/pcaMethods,
-    KechrisLab/MAI,
-    BeanLabASU/metabimpute,
-    renozao/NMF@devel
+    bioc::release/Biobase,
+    url::https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz,
+    bioc::release/impute,
+    url::https://cran.r-project.org/src/contrib/Archive/TimeProjection/TimeProjection_0.2.0.tar.gz,
+    github::jeffwong/imputation,
+    github::WangLab-MSSM/DreamAI/Code,
+    bioc::release/pcaMethods,
+    github::KechrisLab/MAI,
+    github::BeanLabASU/metabimpute,
+    github::renozao/NMF@devel
