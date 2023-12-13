@@ -85,11 +85,11 @@ Language: en-US
 RdMacros: Rdpack
 LazyData: true
 Remotes: 
-github::WangLab-MSSM/DreamAI/Code, 
+https://github.com/WangLab-MSSM/DreamAI/tree/master/Code, 
 github::jeffwong/imputation, 
 bioc::release/impute, 
 github::KechrisLab/MAI, 
 github::BeanLabASU/metabimpute, 
 bioc::release/pcaMethods, 
 https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz, 
-NMF@v0.30.4.900, 
+renozao/NMF 
