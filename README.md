@@ -51,20 +51,8 @@ server](http://imputomics.umb.edu.pl/).
 
 To install *imputomics* you need to have *R* version >= 4.3.0 and installed proper RTools.
 
-1) Clone the repository.
 ``` r
-git clone https://github.com/BioGenies/imputomics.git
-```
-2) Change the directory to newly cloned imputomics.
-3) Run renv to restore proper versions of packages.
-``` r
-renv::restore()
-```
-Downloading all required packages using renv will take some time.
-
-4) Install imputomics by running the code below. When asked do not upgrade any packages.
-``` r
-devtools::install(".")
+devtools::install_github("BioGenies/imputomics")
 ```
 
 ## Run imputomics
