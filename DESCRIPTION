@@ -84,3 +84,4 @@ Suggests:
 Language: en-US
 RdMacros: Rdpack
 LazyData: true
+Remotes: github::WangLab-MSSM/DreamAI, github::jeffwong/imputation, bioc::release/impute, github::KechrisLab/MAI, github::BeanLabASU/metabimpute, bioc::release/pcaMethods, PEMM@v1.0, NMF@v0.30.4.900, 
