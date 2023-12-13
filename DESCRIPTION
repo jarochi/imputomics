@@ -87,12 +87,12 @@ RdMacros: Rdpack
 LazyData: true
 Remotes: 
     bioc::release/Biobase,
-    url::https://github.com/WangLab-MSSM/DreamAI/tree/master/Code, 
+    github::WangLab-MSSM/DreamAI@master/Code, 
     github::jeffwong/imputation, 
     bioc::release/impute, 
     github::KechrisLab/MAI, 
     github::BeanLabASU/metabimpute, 
     bioc::release/pcaMethods, 
-    url::https://cran.r-project.org/src/contrib/Archive/PEMM/, 
+    url::https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz, 
     github::renozao/NMF@devel,
     bioc::release/Biobase
