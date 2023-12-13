@@ -85,6 +85,7 @@ Language: en-US
 RdMacros: Rdpack
 LazyData: true
 Remotes: 
+bioc::release/Biobase,
 https://github.com/WangLab-MSSM/DreamAI/tree/master/Code, 
 github::jeffwong/imputation, 
 bioc::release/impute, 
