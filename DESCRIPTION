@@ -89,7 +89,6 @@ Remotes:
     bioc::release/Biobase,
     bioc::release/impute, 
     github::WangLab-MSSM/DreamAI/Code,
-    github::WangLab-MSSM/DreamAI@master/Code, 
     github::jeffwong/imputation, 
     github::KechrisLab/MAI, 
     github::BeanLabASU/metabimpute, 
