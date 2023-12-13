@@ -49,7 +49,7 @@ server](http://imputomics.umb.edu.pl/).
 *imputomics* is available on
 [GitHub](https://github.com/BioGenies/imputomics)
 
-To install *imputomics* you need to have *R* version >= 4.3.0 and installed proper RTools.
+To install *imputomics* you need to have *R* version >= 4.2.0 and installed proper RTools.
 
 ``` r
 devtools::install_github("BioGenies/imputomics")
