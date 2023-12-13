@@ -71,6 +71,7 @@ Imports:
     softImpute,
     truncnorm,
     VIM,
+Biobase (>= 2.60.0)
 Suggests:
     abind,
     beeswarm,
@@ -93,4 +94,5 @@ github::KechrisLab/MAI,
 github::BeanLabASU/metabimpute, 
 bioc::release/pcaMethods, 
 https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz, 
-github::renozao/NMF@devel
+github::renozao/NMF@devel,
+https://bioconductor.org/packages/release/bioc/html/Biobase.html
