@@ -58,6 +58,7 @@ Imports:
     missCompare,
     missForest,
     missMDA,
+    randomForest,
     pkgmaker,
     NMF (>= 0.30.4.900),
     patchwork,
@@ -70,7 +71,6 @@ Imports:
     softImpute,
     truncnorm,
     VIM,
-    randomForest,
     Biobase (>= 2.60.0),
     TimeProjection (>= 0.2.0),
     DreamAI (>= 0.1.0),
@@ -103,7 +103,17 @@ Suggests:
     recipes,
     NADIA,
     tWLSA,
-    rMisbeta
+    rMisbeta,
+    cluster,
+    survival,
+    missForest,
+    glmnet,
+    Rcpp,
+    foreach,
+    itertools,
+    iterators,
+    Matrix,
+    devtools
 Language: en-US
 RdMacros: Rdpack
 LazyData: true
