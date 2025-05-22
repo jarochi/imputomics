@@ -74,7 +74,22 @@ Imports:
     Biobase (>= 2.60.0),
     TimeProjection (>= 0.2.0),
     DreamAI (>= 0.1.0),
-    pcaMethods
+    pcaMethods,
+    devtools,
+    cluster,
+    survival,
+    missForest,
+    glmnet,
+    Rcpp,
+    foreach,
+    itertools,
+    iterators,
+    Matrix,
+    BiocVersion,
+    cpp11,
+    progress,
+    RcppArmadillo,
+    RcppEigen
 Suggests:
     abind,
     beeswarm,
@@ -103,17 +118,7 @@ Suggests:
     recipes,
     NADIA,
     tWLSA,
-    rMisbeta,
-    cluster,
-    survival,
-    missForest,
-    glmnet,
-    Rcpp,
-    foreach,
-    itertools,
-    iterators,
-    Matrix,
-    devtools
+    rMisbeta
 Language: en-US
 RdMacros: Rdpack
 LazyData: true
