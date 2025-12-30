@@ -301,7 +301,7 @@ ui <- navbarPage(
                       "<b>MNAR (Missing Not At Random):</b> is considered for
                       censored missing values, that are caused by the limit of
                       detection (LOD) of a device </br> ",
-                      "For more details see:  Jarosław Chilimoniuk, Krystyna Grzesiak, Jakub Kała,
+                      "For more details see:  Jarosław Chilimoniuk, Krystyna Grzesiak, Jakub Kołodziejczyk,
                       Dominik Nowakowski, Adam Krętowski, Rafał Kolenda, Michał
                       Ciborowski, Michał Burdukiewicz (2023). imputomics: web
                       server and R package for missing values imputation in
@@ -344,7 +344,7 @@ ui <- navbarPage(
                     )
                   ),
                   HTML('*The most resource demanding tools (MAI and Gibbs Sampler
-                     based methods) are available only in the R package 
+                     based methods) are available only in the R package
                   (<a href="https://github.com/BioGenies/imputomics" target="_blank">https://github.com/BioGenies/imputomics</a>).'),
            ),
            column(10, offset = 1, style = "position:absolute; bottom: 5px;",
