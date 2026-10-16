@@ -11,14 +11,14 @@ impute_metabimpute_halfmin(missdf, verbose = FALSE, ...)
 containing features in columns and samples in rows.}
 
 \item{verbose}{boolean, if \code{TRUE}, prints the typical prompts of
-\code{\link[MetabImpute:impute]{MetabImpute::Impute()}}.}
+\code{\link[MetabImpute:Impute]{MetabImpute::Impute()}}.}
 
-\item{...}{other parameters of \code{\link[MetabImpute:impute]{MetabImpute::Impute()}} besides \code{method}
+\item{...}{other parameters of \code{\link[MetabImpute:Impute]{MetabImpute::Impute()}} besides \code{method}
 and \code{data}.}
 }
 \value{
 A \code{data.frame} with imputed values of half-minimum by
-\code{\link[MetabImpute:impute]{MetabImpute::Impute()}}.
+\code{\link[MetabImpute:Impute]{MetabImpute::Impute()}}.
 }
 \description{
 A function to replace \code{NA} in the data frame by half-minimum from.
@@ -40,6 +40,6 @@ impute_metabimpute_halfmin(sim_miss)
 \insertRef{davis_addressing_2022}{imputomics}
 }
 \seealso{
-\code{\link[MetabImpute:impute]{MetabImpute::Impute()}}.
+\code{\link[MetabImpute:Impute]{MetabImpute::Impute()}}.
 }
 \keyword{constant}

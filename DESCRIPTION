@@ -1,9 +1,9 @@
 Package: imputomics
 Type: Package
 Title: The Most Robust Wrapper for Missing Values Imputation in ‘Omics’ Data
-Version: 0.1.3
+Version: 0.1.4
 Authors@R: c(
-          person("Michał", "Burdukiewicz", ,
+          person("Michał", "Burdukiewicz",
                email = "michalburdukiewicz@gmail.com",
                comment = c(ORCID = "0000-0001-8926-582X"),
                role = c("aut", "cre")),
@@ -22,7 +22,11 @@ Authors@R: c(
           person("Dominik", "Nowakowski", 
                email = "nowakowskisf@gmail.com", 
                comment = c(ORCID = "0000-0002-3515-4320"),
-               role = c("aut", "ctb"))
+               role = c("aut", "ctb")),
+         person("Jeffrey", "Wong", 
+               email = "jeff.ct.wong@gmail.com",
+               comment = "Bundled adaptation of imputation kNN code",
+               role = c("ctb", "cph"))
         )
 Description: Offers a range of methods for simulating and imputing missing values 
              in different types of omics data such as genomics, transcriptomics, 
@@ -32,8 +36,7 @@ Description: Offers a range of methods for simulating and imputing missing value
 License: GPL-3
 Encoding: UTF-8
 VignetteBuilder: knitr
-Depends: R (>= 4.2)
-RoxygenNote: 7.2.3
+Depends: R (>= 4.6)
 Roxygen: list(markdown = TRUE)
 URL: https://biogenies.info/imputomics/,
     http://biogenies.info/imputomics/
@@ -53,17 +56,15 @@ Imports:
     patchwork,
     Hmisc,
     tidyr,
-    imputation (>= 2.0.3),
     impute (>= 1.74.0),
     imputeLCMD,
-    MAI (>= 1.3.0),
+    MAI (>= 1.18.0),
     MetabImpute (>= 0.1.0),
     methods,
     mice,
     missCompare,
     missForest,
     missMDA,
-    NMF (>= 0.30.4.900),
     PEMM (>= 1.0),
     Rdpack,
     R.utils,
@@ -72,13 +73,13 @@ Imports:
     truncnorm,
     VIM,
     Biobase (>= 2.60.0),
-    TimeProjection (>= 0.2.0),
     DreamAI (>= 0.1.0)
 Suggests:
     abind,
     beeswarm,
     knitr,
     testthat,
+    roxygen2,
     matrixStats,
     randomForest,
     spelling,
@@ -91,20 +92,17 @@ Suggests:
     DT,
     shinyhelper,
     colourpicker,
-    ggvenn,
-    pkgmaker
+    ggvenn
 Language: en-US
 RdMacros: Rdpack
 LazyData: true
 Remotes: 
     bioc::Biobase,
-    url::https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz,
+    missCompare=url::https://cran.r-project.org/src/contrib/Archive/missCompare/missCompare_1.0.3.tar.gz,
+    PEMM=url::https://cran.r-project.org/src/contrib/Archive/PEMM/PEMM_1.0.tar.gz,
     bioc::impute,
-    url::https://cran.r-project.org/src/contrib/Archive/TimeProjection/TimeProjection_0.2.0.tar.gz,
-    github::jeffwong/imputation,
-    github::WangLab-MSSM/DreamAI/Code,
+    DreamAI=github::WangLab-MSSM/DreamAI/Code@2cc86d1487227e8215a716459a984b49c4aaac84,
     bioc::pcaMethods,
-    github::KechrisLab/MAI,
-    github::BeanLabASU/metabimpute,
-    url::https://cran.r-project.org/src/contrib/Archive/pkgmaker/pkgmaker_0.32.10.tar.gz,
-    github::renozao/NMF@devel
+    bioc::MAI,
+    MetabImpute=github::BeanLabASU/metabimpute@7c656be78b096b9015e7d762a9704b4948655cef
+Config/roxygen2/version: 8.1.1

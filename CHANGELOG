@@ -1,3 +1,11 @@
+Changes from Version 0.1.3 to 0.1.4
+ * modernized the R/renv dependency environment
+ * replaced NMF/pkgmaker with a local KL-divergence NMF solver
+ * fixed mNMF zero initialization and nonconsecutive rank selection
+ * bundled Jeffrey Wong's kNN implementation with attribution and references
+ * removed imputation and its unused TimeProjection dependency
+ * added upstream equivalence and local imputation regression tests
+
 Changes from Version 0.1.2 to 0.1.3
  * added impute_mice_mixed
  * added list_imputations()

@@ -9,3 +9,11 @@
 ^pkgdown$
 README.Rmd
 Dockerfile_imputomics
+
+^dependency-update\.log$
+^update-dependencies\.R$
+^documentation\.log$
+^validation\.log$
+^.*\.Rcheck$
+^imputomics_.*\.tar\.gz$
+^.*\.log$

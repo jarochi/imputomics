@@ -11,13 +11,13 @@ impute_metabimpute_rf(missdf, verbose = FALSE, ...)
 containing features in columns and samples in rows.}
 
 \item{verbose}{boolean, if \code{TRUE}, prints the typical prompts of
-\code{\link[MetabImpute:impute]{MetabImpute::Impute()}}.}
+\code{\link[MetabImpute:Impute]{MetabImpute::Impute()}}.}
 
-\item{...}{other parameters of \code{\link[MetabImpute:impute]{MetabImpute::Impute()}} besides \code{method}
+\item{...}{other parameters of \code{\link[MetabImpute:Impute]{MetabImpute::Impute()}} besides \code{method}
 and \code{data}.}
 }
 \value{
-A \code{data.frame} with imputed values by \code{\link[MetabImpute:impute]{MetabImpute::Impute()}}.
+A \code{data.frame} with imputed values by \code{\link[MetabImpute:Impute]{MetabImpute::Impute()}}.
 }
 \description{
 A function to replace \code{NA} in the data frame using random forest.
@@ -39,5 +39,5 @@ impute_metabimpute_rf(sim_miss)
 \insertRef{davis_addressing_2022}{imputomics}
 }
 \seealso{
-\code{\link[MetabImpute:impute]{MetabImpute::Impute()}}.
+\code{\link[MetabImpute:Impute]{MetabImpute::Impute()}}.
 }

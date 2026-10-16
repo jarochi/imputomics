@@ -106,3 +106,34 @@ cat(imputomics_contact())
 cat(imputomics_funding())
 cat(imputomics_funding_images())
 ```
+
+
+## Local imputation implementations
+
+`impute_mnmf()` now uses a local nonnegative matrix factorization solver;
+`NMF` and `pkgmaker` are no longer required. It follows the
+[Xu et al. mNMF workflow](https://doi.org/10.3390/molecules26195787), using
+multiplicative KL-divergence updates. Use `set.seed()` for reproducibility.
+Results can differ numerically from the former NMF package implementation.
+
+`impute_imputation_knn()` uses a bundled adaptation of **Jeffrey Wong's code**
+from [imputation 2.0.3](https://github.com/jeffwong/imputation), revision
+`c1cc5e4db150dc5fe4fa069be0670284143a105f`, distributed under GPL.
+It no longer downloads that package or its TimeProjection dependency.
+Please cite Wong, J. (2013), *imputation: Fill missing values in a data matrix*,
+and [Troyanskaya et al. (2001)](https://doi.org/10.1093/bioinformatics/17.6.520).
+Source links and adaptation details are in [inst/NOTICE](inst/NOTICE).
+
+
+## Dependency environment
+
+The updated environment targets R 4.6 with Bioconductor 3.23 and renv 1.3.1.
+Run `renv::restore()` from the project to reproduce the versions in `renv.lock`.
+The library is kept under `renv/library`, separated by R version and platform.
+To refresh repository dependencies, run `Rscript --vanilla update-dependencies.R`
+from the repository root. Windows source packages require a compatible Rtools.
+
+MAI now comes from Bioconductor. PEMM 1.0 and missCompare 1.0.3 use their
+last available CRAN archive releases. DreamAI and MetabImpute are pinned to the
+upstream revisions fetched during this update; their pins in DESCRIPTION and
+the update script must be changed together when updating those sources.

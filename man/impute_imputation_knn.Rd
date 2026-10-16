@@ -10,19 +10,29 @@ impute_imputation_knn(missdf, ...)
 \item{missdf}{a data frame with missing values to be imputed
 containing features in columns and samples in rows.}
 
-\item{...}{other parameters of \code{\link[imputation:kNNImpute]{imputation::kNNImpute()}} besides \code{x}.}
+\item{...}{Optional \code{k}, \code{x.dist}, \code{impute.fn}, and \code{verbose}.
+A custom \code{impute.fn(values, distances, k)} returns one numeric value.}
 }
 \value{
 A \code{data.frame} with imputed values by k-nearest neighbors.
 }
 \description{
 A function to replace \code{NA} in the data frame by
-\code{\link[imputation:kNNImpute]{imputation::kNNImpute()}}.
+Jeffrey Wong's locally bundled kNN implementation.
 }
 \section{Silent defaults}{
 
 \code{verbose} is set to \code{FALSE} and \code{k} to 5 or the number of
-columns of \code{x} (whichever is smaller).
+columns or the number of rows minus one (whichever is smallest).
+}
+
+\section{Original implementation}{
+
+Adapted from Jeffrey Wong's imputation 2.0.3 (GPL):
+\url{https://github.com/jeffwong/imputation}. No GitHub installation is needed.
+Distances use the original observed data. Available finite-distance donors
+limit k; equal-distance donors use an unweighted mean. Values without usable
+donors are zero, following the upstream fallback.
 }
 
 \examples{
@@ -30,6 +40,7 @@ data(sim_miss)
 impute_imputation_knn(sim_miss)
 
 }
-\seealso{
-\code{\link[imputation:kNNImpute]{imputation::kNNImpute()}}
+\references{
+\insertRef{wong_imputation_2013}{imputomics}
+\insertRef{troyanskaya_knn_2001}{imputomics}
 }

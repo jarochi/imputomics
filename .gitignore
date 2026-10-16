@@ -6,3 +6,10 @@ metabolomics-missing-value-imputation.Rproj
 packrat/lib*/
 docs
 inst/doc
+
+dependency-update.log
+documentation.log
+validation.log
+*.Rcheck/
+imputomics_*.tar.gz
+/*.log

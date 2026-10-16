@@ -6,7 +6,7 @@
 \alias{imputomics-package}
 \title{imputomics: The Most Robust Wrapper for Missing Values Imputation in ‘Omics’ Data}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+\if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
 
 Offers a range of methods for simulating and imputing missing values in different types of omics data such as genomics, transcriptomics, proteomics, and metabolomics. Provides tools for comparing and evaluating the performance of imputation methods in the terms of accuracy and computation time.
 }
@@ -24,10 +24,16 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Michał Burdukiewicz \email{michalburdukiewicz@gmail.com} (\href{https://orcid.org/0000-0001-8926-582X}{ORCID})
   \item Krystyna Grzesiak \email{krygrz11@gmail.com} (\href{https://orcid.org/0000-0003-2581-7722}{ORCID}) [contributor]
   \item Jarosław Chilimoniuk \email{jaroslaw.chilimoniuk@gmail.com} (\href{https://orcid.org/0000-0001-5467-018X}{ORCID}) [contributor]
-  \item Jakub Kała \email{kalajakub96@gmail.com} [contributor]
+  \item Jakub Kołodziejczyk \email{kolodziejczykjakub.mail@gmail.com} (\href{https://orcid.org/0000-0002-7187-6988}{ORCID}) [contributor]
   \item Dominik Nowakowski \email{nowakowskisf@gmail.com} (\href{https://orcid.org/0000-0002-3515-4320}{ORCID}) [contributor]
+}
+
+Other contributors:
+\itemize{
+  \item Jeffrey Wong \email{jeff.ct.wong@gmail.com} (Bundled adaptation of imputation kNN code) [contributor, copyright holder]
 }
 
 }

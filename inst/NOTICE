@@ -1,0 +1,46 @@
+Bundled implementation: Jeffrey Wong's imputation
+
+R/imputation-knn-local.R adapts kNNImpute from imputation 2.0.3 by Jeffrey
+Wong. This is an implementation of his code, not a newly invented algorithm.
+Upstream declares License: GPL; this adaptation is distributed under this
+package's GPL-3 license. Copyright in upstream code remains with its authors.
+
+Source: https://github.com/jeffwong/imputation
+Pinned revision: c1cc5e4db150dc5fe4fa069be0670284143a105f
+https://github.com/jeffwong/imputation/blob/c1cc5e4db150dc5fe4fa069be0670284143a105f/R/kNN.R
+https://github.com/jeffwong/imputation/blob/c1cc5e4db150dc5fe4fa069be0670284143a105f/R/utils.R
+The original files are retained in tests/testthat/fixtures for regression tests.
+Only kNN and its preprocessing/distance handling are adapted; other algorithms
+and the upstream cross-validation interface are not exposed by imputomics.
+
+Citation: Wong, Jeffrey (2013). imputation: Fill missing values in a data
+matrix. R package version 2.0.3. https://github.com/jeffwong/imputation
+Algorithm reference: Troyanskaya O, Cantor M, Sherlock G, Brown P, Hastie T,
+Tibshirani R, Botstein D, Altman RB (2001). Missing value estimation methods
+for DNA microarrays. Bioinformatics 17(6):520-525.
+https://doi.org/10.1093/bioinformatics/17.6.520
+
+Adaptation changes: consistent list return for complete data; validation;
+support for both dist objects and full distance matrices; k limited to
+available finite-distance donors; mean fallback for zero total weights;
+zero fallback for no usable donors (as in upstream's unresolved-NA fallback).
+Donor values and distances always use the original data, never prior imputations.
+The wrapper's default k is capped at nrow(x)-1, in addition to ncol(x) and 5.
+
+Local NMF implementation
+
+R/NMF.R implements multiplicative updates minimizing generalized KL divergence
+using base R, with normalization, convergence checks, and input validation.
+Reference: Lee DD, Seung HS (1999). Learning the parts of objects by
+non-negative matrix factorization. Nature 401:788-791.
+https://doi.org/10.1038/44565
+The mNMF workflow and weights are adapted from Jingjing Xu and colleagues:
+https://github.com/freeoliver-jing/NMF
+Xu J et al. (2021). NMF-Based Approach for Missing Values Imputation of
+Mass Spectrometry Metabolomics Data. Molecules 26(19):5787.
+https://doi.org/10.3390/molecules26195787
+This local solver is not a full replacement for the public NMF package API.
+It uses one random initialization and obeys set.seed(); numerical results may
+differ from the former package. Zero pre-imputation now means zero in log
+space, requested nonconsecutive ranks are respected, and observed values are
+preserved exactly after averaging reconstructions.

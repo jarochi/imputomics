@@ -192,3 +192,13 @@ doi:10.1016/j.jbi.2020.103576 <https://doi.org/10.1016/j.jbi.2020.103576>.
 45. Xu J, Wang Y, Xu X, Cheng K, Raftery D, Dong J (2021). “NMF-Based Approach for Missing
 Values Imputation of Mass Spectrometry Metabolomics Data.” _Molecules_, *26*(19), 5787. ISSN
 1420-3049, doi:10.3390/molecules26195787 <https://doi.org/10.3390/molecules26195787>.
+
+
+46. Wong J (2013). *imputation: Fill missing values in a data matrix*. R package
+version 2.0.3. [Original code](https://github.com/jeffwong/imputation).
+The kNN wrapper uses a locally bundled adaptation of this implementation.
+
+47. Troyanskaya O, Cantor M, Sherlock G, Brown P, Hastie T, Tibshirani R,
+Botstein D, Altman RB (2001). “Missing value estimation methods for DNA
+microarrays.” *Bioinformatics*, **17**(6), 520–525.
+[doi:10.1093/bioinformatics/17.6.520](https://doi.org/10.1093/bioinformatics/17.6.520).

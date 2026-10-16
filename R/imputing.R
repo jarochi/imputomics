@@ -484,19 +484,27 @@ impute_bcv_svd <- function(missdf, ...) {
 #' \strong{imputation kNN} imputation.
 #'
 #' A function to replace \code{NA} in the data frame by
-#' [imputation::kNNImpute()].
+#' Jeffrey Wong's locally bundled kNN implementation.
 #'
-#' @importFrom imputation kNNImpute
 #'
 #' @inheritParams impute_zero
-#' @param ... other parameters of [imputation::kNNImpute()] besides \code{x}.
+#' @param ... Optional \code{k}, \code{x.dist}, \code{impute.fn}, and \code{verbose}.
+#' A custom \code{impute.fn(values, distances, k)} returns one numeric value.
 #'
 #' @section Silent defaults:
 #' \code{verbose} is set to \code{FALSE} and \code{k} to 5 or the number of
-#' columns of \code{x} (whichever is smaller).
+#' columns or the number of rows minus one (whichever is smallest).
 #' @returns A \code{data.frame} with imputed values by k-nearest neighbors.
 #'
-#' @seealso [imputation::kNNImpute()]
+#' @section Original implementation:
+#' Adapted from Jeffrey Wong's imputation 2.0.3 (GPL):
+#' <https://github.com/jeffwong/imputation>. No GitHub installation is needed.
+#' Distances use the original observed data. Available finite-distance donors
+#' limit k; equal-distance donors use an unweighted mean. Values without usable
+#' donors are zero, following the upstream fallback.
+#' @references
+#' \insertRef{wong_imputation_2013}{imputomics}
+#' \insertRef{troyanskaya_knn_2001}{imputomics}
 #'
 #' @examples
 #' data(sim_miss)
@@ -509,10 +517,10 @@ impute_imputation_knn <- function(missdf, ...) {
   all_args <- extend_arglist(list(...),
                              list(x = as.matrix(missdf)),
                              list(verbose = FALSE,
-                                  k = min(ncol(missdf), 5)))
+                                  k = min(ncol(missdf), nrow(missdf) - 1L, 5L)))
 
-  imputed <- do.call(imputation::kNNImpute, all_args)
-  data.frame(imputed[["x"]])
+  imputed <- do.call(wong_knn_impute, all_args)
+  data.frame(imputed[["x"]], check.names = FALSE)
 }
 
 
@@ -598,17 +606,20 @@ impute_bayesmetab <- function(missdf, M = 100) {
 #' A function to replace \code{NA} in the data frame using
 #' metabolomic Non-negative Matrix Factorization.
 #'
-#' @importFrom NMF nmf.getOption
 #'
 #' @inheritParams impute_zero
-#' @param kgroup the range of k value.
+#' @param kgroup Integer factorization ranks between one and the smaller matrix
+#' dimension. Nonconsecutive ranks are allowed.
 #' @param initialType type of pre-imputation. Possible values are: \code{mean},
-#' \code{median}, and \code{zero}.
+#' \code{median}, and \code{zero}. Zero initializes missing entries to zero
+#' in log space (one in the original intensity scale).
 #'
 #' @section k:
-#' If k is not defined, it becomes a range between 1 and the minimum of
-#' number of columns and number of rows of \code{missdf} as advised in the
-#' original article (see References).
+#' If \code{kgroup} is not defined, up to 20 ranks span one through the
+#' smaller matrix dimension. The local solver uses multiplicative updates
+#' minimizing generalized KL divergence, with at most 1000 iterations and
+#' relative objective tolerance 1e-6. Set \code{set.seed()} before calling for
+#' reproducibility. Results can differ from the former NMF package solver.
 #' @returns A \code{data.frame} with imputed values by mNMF.
 #' @section Original implementation:
 #' This function was adapted from https://github.com/freeoliver-jing/NMF.
@@ -630,5 +641,5 @@ impute_mnmf <- function(missdf, kgroup = NULL, initialType = "mean") {
 
   data.frame(t(nmf_opt(IMP = t(as.matrix(missdf)),
                        kgroup = kgroup,
-                       initialType = initialType)))
+                       initialType = initialType)), check.names = FALSE)
 }

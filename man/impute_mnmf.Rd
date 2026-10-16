@@ -10,10 +10,12 @@ impute_mnmf(missdf, kgroup = NULL, initialType = "mean")
 \item{missdf}{a data frame with missing values to be imputed
 containing features in columns and samples in rows.}
 
-\item{kgroup}{the range of k value.}
+\item{kgroup}{Integer factorization ranks between one and the smaller matrix
+dimension. Nonconsecutive ranks are allowed.}
 
 \item{initialType}{type of pre-imputation. Possible values are: \code{mean},
-\code{median}, and \code{zero}.}
+\code{median}, and \code{zero}. Zero initializes missing entries to zero
+in log space (one in the original intensity scale).}
 }
 \value{
 A \code{data.frame} with imputed values by mNMF.
@@ -24,9 +26,11 @@ metabolomic Non-negative Matrix Factorization.
 }
 \section{k}{
 
-If k is not defined, it becomes a range between 1 and the minimum of
-number of columns and number of rows of \code{missdf} as advised in the
-original article (see References).
+If \code{kgroup} is not defined, up to 20 ranks span one through the
+smaller matrix dimension. The local solver uses multiplicative updates
+minimizing generalized KL divergence, with at most 1000 iterations and
+relative objective tolerance 1e-6. Set \code{set.seed()} before calling for
+reproducibility. Results can differ from the former NMF package solver.
 }
 
 \section{Original implementation}{
